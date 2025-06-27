@@ -5,7 +5,7 @@ import { GithubIcon, LinkedinIcon, FileTextIcon } from 'lucide-react'
 export function Hero() {
   const phrases = [
     "I'm an aspiring software engineer",
-    'I like to play volleyball',
+    'I play volleyball',
     'I like cats',
   ]
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0)
@@ -40,7 +40,7 @@ export function Hero() {
       }
     }
     return () => clearTimeout(timeoutId)
-  }, [displayText, isTyping, currentPhraseIndex, phrases])
+  }, [displayText, isTyping, currentPhraseIndex])
 
   // Blinking cursor effect
   useEffect(() => {
