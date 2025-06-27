@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import { GithubIcon, ExternalLinkIcon } from 'lucide-react'
+import Image from 'next/image'
 export function Projects() {
   const projects = [
     {
@@ -46,9 +47,11 @@ export function Projects() {
             className="bg-emerald-500 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full"
           >
             <div className="h-48 overflow-hidden">
-              <img
+              <Image
                 src={project.image}
                 alt={project.title}
+                width={400}
+                height={192}
                 className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-110"
               />
             </div>
