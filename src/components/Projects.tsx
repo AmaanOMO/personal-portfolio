@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { GithubIcon, ExternalLinkIcon, HomeIcon } from 'lucide-react'
+import { GithubIcon, ExternalLinkIcon } from 'lucide-react'
 import Image from 'next/image'
 
 export function Projects() {
