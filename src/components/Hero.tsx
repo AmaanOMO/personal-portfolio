@@ -40,7 +40,7 @@ export function Hero() {
       }
     }
     return () => clearTimeout(timeoutId)
-  }, [displayText, isTyping, currentPhraseIndex])
+  }, [displayText, isTyping, currentPhraseIndex, phrases])
 
   // Blinking cursor effect
   useEffect(() => {

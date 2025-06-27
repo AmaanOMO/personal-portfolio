@@ -1,14 +1,14 @@
 'use client'
 import React from 'react'
 import { PlayIcon } from 'lucide-react'
+import Image from 'next/image'
 export function Videos() {
   const videos = [
     {
       title: 'Spurhacks 2025 Edit',
       description:
         '',
-      thumbnail:
-        'https://img.youtube.com/vi/VWumBIzF4v8/maxresdefault.jpg',
+      thumbnail: '/youtube.png',
       duration: '',
       link: 'https://youtu.be/VWumBIzF4v8',
     },
@@ -27,9 +27,11 @@ export function Videos() {
             className="bg-emerald-500 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full"
           >
             <div className="relative h-48 overflow-hidden">
-              <img
+              <Image
                 src={video.thumbnail}
                 alt={video.title}
+                width={400}
+                height={192}
                 className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-110"
               />
               <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 opacity-0 hover:opacity-100 transition-opacity duration-300">
