@@ -2,12 +2,13 @@
 import React, { useEffect, useState } from 'react'
 import { GithubIcon, LinkedinIcon, FileTextIcon } from 'lucide-react'
 
+const phrases = [
+  "I'm an aspiring software engineer",
+  "I play volleyball",
+  "I like cats",
+];
+
 export function Hero() {
-  const phrases = [
-    "I'm an aspiring software engineer",
-    'I play volleyball',
-    'I like cats',
-  ]
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0)
   const [displayText, setDisplayText] = useState('')
   const [isTyping, setIsTyping] = useState(true)
