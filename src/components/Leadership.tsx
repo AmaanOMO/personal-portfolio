@@ -4,25 +4,32 @@ import { UsersIcon } from 'lucide-react'
 export function Leadership() {
   const leadershipRoles = [
     {
-      organization: 'Forge',
-      role: 'Founder | Executive Director',
-      period: '2025 - Present',
-      description:
-        'Founded and led a student-run tech incubator, mentoring 30+ students and launching 5 successful projects.',
-    },
-    {
-      organization: 'Nexo',
-      role: 'Technical Lead',
-      period: '2019 - 2021',
-      description:
-        'Managed a team of 8 developers working on community-focused applications that served 500+ users.',
+      organization: 'UB Forge',
+      role: 'Founder|Executive Director',
+      period: 'Mar 2025 – Present',
+      bullets: [
+        'Launched a student-run developer collective from scratch, leading a 6-person core team and planning 5+ project pods for Fall 2025.',
+        'Built partnerships and internal infrastructure to give students access to real-world product building and startup mentorship.',
+      ],
     },
     {
       organization: 'Theta Tau',
-      role: 'Vice President',
-      period: '2018 - 2019',
-      description:
-        'Organized professional development events and workshops for 50+ engineering students.',
+      role: 'Head of Professional Dev.',
+      period: 'May 2024 – Jan 2025',
+      bullets: [
+        'Organized 4 company tours and 3 networking panels with speakers from Big Tech and startups, driving 100+ student interactions.',
+        'Created a new speaker outreach system to streamline comms and secure higher-caliber guest speakers.',
+      ],
+    },
+    {
+      organization: 'Theta Tau',
+      role: 'Pledge Class President',
+      period: 'Jan 2024 – Apr 2024',
+      bullets: [
+        'Led a 19-member pledge class through a 10-week leadership and engineering program, fostering collaboration and accountability.',
+        'Raised $1,900 to fund and build an Arduino-powered catapult, managing coding, system integration, and final demo.',
+        'Coordinated project logistics and delegated technical tasks across subteams for successful on-time delivery.',
+      ],
     },
   ]
   return (
@@ -47,7 +54,11 @@ export function Leadership() {
               <span className="text-white font-medium">{role.role}</span>
               <span className="text-white/80 text-sm">{role.period}</span>
             </div>
-            <p className="text-white">{role.description}</p>
+            <ul className="list-disc pl-5 text-white mb-2 space-y-2">
+              {role.bullets.map((bullet, i) => (
+                <li key={i}>{bullet}</li>
+              ))}
+            </ul>
           </div>
         ))}
       </div>

@@ -22,11 +22,11 @@ export function Projects() {
       image: '/Itinera.png',
     },
     {
-      title: 'This Website',
+      title: 'Portfolio Website',
       description:
         'My personal portfolio website, built to showcase my projects, experience, and skills. Designed and developed from scratch with a focus on clean design, accessibility, and performance.',
       tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel'],
-      github: 'https://github.com/AmaanOMO/amaansheikh-portfolio',
+      github: 'https://github.com/AmaanOMO/personal-portfolio',
       demo: '#',
       image: '/Portfolio.png',
     },

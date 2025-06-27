@@ -1,32 +1,55 @@
 'use client'
 import React from 'react'
 import { CheckCircleIcon } from 'lucide-react'
+
 export function Skills() {
   const skillCategories = [
     {
-      title: 'Frontend',
+      title: 'Technical Skills',
       skills: [
-        'HTML/CSS',
-        'JavaScript',
-        'TypeScript',
-        'React',
-        'Next.js',
-        'Tailwind CSS',
+        'Web Development',
+        'Object-Oriented Programming',
+        'Data Structures & Algorithms',
+        'Product Building & Prototyping',
       ],
     },
     {
-      title: 'Backend',
-      skills: ['Node.js', 'Express', 'Python', 'Django', 'REST API', 'GraphQL'],
+      title: 'Web & Database',
+      skills: [
+        'HTML/CSS',
+        'JavaScript / TypeScript',
+        'React',
+        'Node.js',
+        'Express.js',
+        'SQL / NoSQL',
+        'Supabase',
+        'REST API',
+      ],
     },
     {
-      title: 'Database',
-      skills: ['MongoDB', 'PostgreSQL', 'Firebase', 'Redis', 'SQL', 'NoSQL'],
+      title: 'Programming Languages',
+      skills: [
+        'Python',
+        'Java',
+        'C / C++',
+        'TypeScript',
+        'JavaScript',
+      ],
     },
     {
       title: 'DevOps & Tools',
-      skills: ['Git', 'Docker', 'AWS', 'CI/CD', 'Linux', 'Webpack'],
+      skills: [
+        'Git',
+        'Vercel',
+        'Linux',
+        'PostHog',
+        'Supabase Auth / Storage',
+        'VS Code',
+        'Figma',
+      ],
     },
   ]
+
   return (
     <section id="skills" className="py-16 border-t border-emerald-100">
       <h2 className="text-3xl font-bold mb-2">skills</h2>
@@ -40,11 +63,11 @@ export function Skills() {
             <h3 className="text-xl font-semibold mb-4 text-white">
               {category.title}
             </h3>
-            <div className="grid grid-cols-2 gap-y-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-8">
               {category.skills.map((skill, skillIndex) => (
-                <div key={skillIndex} className="flex items-center">
-                  <CheckCircleIcon className="w-5 h-5 text-white mr-2" />
-                  <span className="text-white">{skill}</span>
+                <div key={skillIndex} className="flex items-center space-x-2">
+                  <CheckCircleIcon className="w-5 h-5 min-w-[20px] min-h-[20px] text-white" />
+                  <span className="text-white text-base">{skill}</span>
                 </div>
               ))}
             </div>
