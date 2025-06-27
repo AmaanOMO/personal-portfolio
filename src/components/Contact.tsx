@@ -24,7 +24,7 @@ export function Contact() {
           </a>
         </div>
         <div className="bg-emerald-500 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
-          <form action="https://formspree.io/f/mnqewqzv" method="POST">
+          <form action="https://formspree.io/f/mqabwegq" method="POST">
             <div className="mb-4">
               <label htmlFor="name" className="block text-white mb-2">
                 Name
