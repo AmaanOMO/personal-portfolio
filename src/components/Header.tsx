@@ -67,34 +67,36 @@ export function Header() {
           </div>
         </div>
       </div>
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Dropdown (Right Side) */}
       {menuOpen && (
         <div
-          className="fixed inset-0 z-50 bg-white/95 flex flex-col items-center justify-center transition-all"
+          className="fixed inset-0 z-50"
           onClick={handleMenuClose}
         >
-          <nav
-            className="flex flex-col space-y-8 text-2xl font-bold text-gray-800"
-            onClick={(e) => e.stopPropagation()}
+          <div
+            className="absolute top-0 right-0 h-full w-64 bg-white/95 shadow-lg flex flex-col py-8 px-6 transition-transform duration-300"
+            onClick={e => e.stopPropagation()}
           >
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={handleMenuClose}
-                className="hover:text-emerald-500 transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-          <button
-            className="absolute top-6 right-6 text-gray-600 hover:text-gray-800 text-3xl"
-            onClick={handleMenuClose}
-            aria-label="Close menu"
-          >
-            &times;
-          </button>
+            <button
+              className="absolute top-4 right-4 text-gray-600 hover:text-gray-800 text-3xl"
+              onClick={handleMenuClose}
+              aria-label="Close menu"
+            >
+              &times;
+            </button>
+            <nav className="flex flex-col space-y-8 text-2xl font-bold text-gray-800 mt-12">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={handleMenuClose}
+                  className="hover:text-emerald-500 transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+          </div>
         </div>
       )}
     </header>
