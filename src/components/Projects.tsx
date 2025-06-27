@@ -37,8 +37,7 @@ export function Projects() {
       <h2 className="text-3xl font-bold mb-2">featured projects</h2>
       <div className="h-1 w-16 bg-emerald-500 mb-8"></div>
       <p className="text-gray-600 mb-12 max-w-3xl">
-        These are some of the projects I've worked on that showcase my skills
-        and interests.
+        {"These are some of the projects I've worked on that showcase my skills and interests."}
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
