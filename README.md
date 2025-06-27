@@ -8,7 +8,7 @@ The site is built using **Next.js**, **TypeScript**, and **Tailwind CSS**. Deplo
 
 ---
 
-- [https://amaans.dev](#) <!-- Add your live site link here if available -->
+- [Portfolio Live](https://www.amaans.dev)
 - [Contact](mailto:amaansheikhme@gmail.com)
 
 ---
