@@ -4,28 +4,28 @@ import { BriefcaseIcon } from 'lucide-react'
 export function Experience() {
   const experiences = [
     {
-      company: 'Tech Innovations Inc.',
-      position: 'Senior Software Engineer',
-      period: '2022 - Present',
-      description:
-        'Led development of a cloud-based analytics platform, improving performance by 40%. Mentored junior developers and implemented CI/CD pipelines.',
-      tech: ['React', 'Node.js', 'AWS', 'MongoDB'],
+      company: 'Outlier AI',
+      position: 'Prompt Engineer',
+      period: 'Nov 2024 – Mar 2025',
+      description: '',
+      tech: [],
+      bullets: [
+        'Increased LLM response consistency by 25% by designing and testing over 100 tailored prompts for real-world AI workflows.',
+        'Boosted prompt accuracy across customer use cases by running structured evaluation pipelines and refining edge-case logic.',
+        'Improved user experience in generative AI features by collaborating with engineering leads to iterate on prompt strategies.',
+      ],
     },
     {
-      company: 'DataViz Solutions',
-      position: 'Full Stack Developer',
-      period: '2020 - 2022',
-      description:
-        'Developed responsive web applications for data visualization. Collaborated with UX designers to create intuitive user interfaces.',
-      tech: ['React', 'Express', 'D3.js', 'PostgreSQL'],
-    },
-    {
-      company: 'StartUp Labs',
-      position: 'Frontend Developer',
-      period: '2018 - 2020',
-      description:
-        'Built and maintained client-facing applications. Implemented responsive designs and optimized web performance.',
-      tech: ['JavaScript', 'HTML/CSS', 'Vue.js', 'Firebase'],
+      company: 'Visual Computing Lab, UB',
+      position: 'Undergraduate Researcher',
+      period: 'Oct 2024 – Jan 2025',
+      description: '',
+      tech: [],
+      bullets: [
+        'Learned about state-of-the-art HOI detection by collaborating with SONY researchers on transformer-based model optimization.',
+        'Explored and analyzed Python codebases for QPIC and STIP architectures to understand model efficiency and design.',
+        'Studied detection precision on benchmark datasets (V-COCO, HICO-DET) by investigating query embeddings and pipeline gaps.',
+      ],
     },
   ]
   return (
@@ -66,17 +66,12 @@ export function Experience() {
                   <h4 className="text-lg font-medium text-white mb-4">
                     {experience.position}
                   </h4>
-                  <p className="text-white mb-4">{experience.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {experience.tech.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="bg-white/20 text-xs px-3 py-1 rounded-full text-white"
-                      >
-                        {tech}
-                      </span>
+                  {/* Bullets */}
+                  <ul className="list-disc pl-5 text-white mb-4 space-y-2">
+                    {experience.bullets.map((bullet, i) => (
+                      <li key={i}>{bullet}</li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
               </div>
             </div>

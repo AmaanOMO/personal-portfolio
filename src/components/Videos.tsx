@@ -4,28 +4,13 @@ import { PlayIcon } from 'lucide-react'
 export function Videos() {
   const videos = [
     {
-      title: 'Building a React Portfolio',
+      title: 'Spurhacks 2025 Edit',
       description:
-        'A step-by-step guide to creating a personal portfolio with React and Tailwind CSS.',
+        '',
       thumbnail:
-        'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80',
-      duration: '12:45',
-    },
-    {
-      title: 'Modern JavaScript Techniques',
-      description:
-        'Exploring advanced JavaScript patterns and techniques for cleaner, more efficient code.',
-      thumbnail:
-        'https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80',
-      duration: '18:32',
-    },
-    {
-      title: 'Responsive Design Principles',
-      description:
-        'Learn how to create truly responsive websites that work on any device.',
-      thumbnail:
-        'https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
-      duration: '15:10',
+        'https://img.youtube.com/vi/VWumBIzF4v8/maxresdefault.jpg',
+      duration: '',
+      link: 'https://youtu.be/VWumBIzF4v8',
     },
   ]
   return (
@@ -33,7 +18,7 @@ export function Videos() {
       <h2 className="text-3xl font-bold mb-2">videos</h2>
       <div className="h-1 w-16 bg-emerald-500 mb-8"></div>
       <p className="text-gray-600 mb-12 max-w-3xl">
-        Check out some of my video tutorials and tech talks.
+        Check out some of my cool videos.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {videos.map((video, index) => (
@@ -62,7 +47,9 @@ export function Videos() {
               </h3>
               <p className="text-white mb-4 flex-1">{video.description}</p>
               <a
-                href="#"
+                href={video.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-white hover:text-white/80 transition-colors font-medium"
               >
                 Watch video
