@@ -1,5 +1,5 @@
 'use client'
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { GithubIcon, LinkedinIcon, FileTextIcon } from 'lucide-react'
 
 export function Hero() {
@@ -54,7 +54,7 @@ export function Hero() {
     <section className="py-20 md:py-32 flex flex-col items-center justify-center text-center">
       <div className="cat-emoji text-5xl mb-6">🐈‍⬛🐈</div>
       <h1 className="text-4xl md:text-6xl font-bold mb-6">
-        Hi, i'm <span className="text-emerald-500">Amaan Sheikh</span>
+        {"Hi, I'm "}<span className="text-emerald-500">Amaan Sheikh</span>
       </h1>
       <div className="text-xl md:text-2xl mb-8 font-light min-h-[2rem]">
         <span className="text-black">{displayText}</span>

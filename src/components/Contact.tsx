@@ -14,8 +14,7 @@ export function Contact() {
           </div>
           <h3 className="text-xl font-bold mb-4 text-white">Get In Touch</h3>
           <p className="text-white mb-6">
-            Have a project in mind or want to chat? Feel free to reach out. I'm
-            always open to discussing new opportunities and ideas.
+            {"Have a project in mind or want to chat? Feel free to reach out. I'm always open to discussing new opportunities and ideas."}
           </p>
           <a
             href="mailto:amaansheikhme@gmail.com"
