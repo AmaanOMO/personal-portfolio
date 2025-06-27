@@ -58,7 +58,7 @@ export function Skills() {
         {skillCategories.map((category, index) => (
           <div
             key={index}
-            className="bg-emerald-500 p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
+            className="bg-emerald-500 p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:outline hover:outline-2 hover:outline-black focus:outline-none focus:ring-2 focus:ring-black"
           >
             <h3 className="text-xl font-semibold mb-4 text-white">
               {category.title}

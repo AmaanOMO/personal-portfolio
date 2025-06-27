@@ -40,7 +40,7 @@ export function Leadership() {
         {leadershipRoles.map((role, index) => (
           <div
             key={index}
-            className="bg-emerald-500 p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
+            className="bg-emerald-500 p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:outline hover:outline-2 hover:outline-black focus:outline-none focus:ring-2 focus:ring-black"
           >
             <div className="mb-4">
               <div className="w-10 h-10 text-white">
