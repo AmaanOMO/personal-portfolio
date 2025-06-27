@@ -1,4 +1,4 @@
-# **amaan.sheikh - portfolio**
+# My personal portfolio**
 
 ---
 
