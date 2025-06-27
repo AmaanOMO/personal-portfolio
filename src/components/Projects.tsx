@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { GithubIcon, ExternalLinkIcon } from 'lucide-react'
+import { GithubIcon, ExternalLinkIcon, HomeIcon } from 'lucide-react'
 import Image from 'next/image'
 export function Projects() {
   const projects = [
@@ -81,6 +81,14 @@ export function Projects() {
                   className="text-white hover:text-white/80 transition-colors"
                 >
                   <GithubIcon className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://www.amaans.dev/#projects"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-white/80 transition-colors"
+                >
+                  <HomeIcon className="w-5 h-5" />
                 </a>
                 <a
                   href={project.demo}
