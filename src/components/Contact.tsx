@@ -24,7 +24,7 @@ export function Contact() {
           </a>
         </div>
         <div className="bg-emerald-500 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
-          <form>
+          <form action="https://formspree.io/f/mnqewqzv" method="POST">
             <div className="mb-4">
               <label htmlFor="name" className="block text-white mb-2">
                 Name
@@ -32,6 +32,7 @@ export function Contact() {
               <input
                 type="text"
                 id="name"
+                name="name"
                 className="w-full bg-white/10 border border-white/20 rounded-md px-4 py-2 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
                 placeholder="Your name"
               />
@@ -43,8 +44,10 @@ export function Contact() {
               <input
                 type="email"
                 id="email"
+                name="email"
                 className="w-full bg-white/10 border border-white/20 rounded-md px-4 py-2 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
                 placeholder="Your email"
+                required
               />
             </div>
             <div className="mb-6">
@@ -53,9 +56,11 @@ export function Contact() {
               </label>
               <textarea
                 id="message"
+                name="message"
                 rows={4}
                 className="w-full bg-white/10 border border-white/20 rounded-md px-4 py-2 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
                 placeholder="Your message"
+                required
               ></textarea>
             </div>
             <button
