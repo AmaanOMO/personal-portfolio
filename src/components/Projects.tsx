@@ -2,6 +2,7 @@
 import React from 'react'
 import { GithubIcon, ExternalLinkIcon, HomeIcon } from 'lucide-react'
 import Image from 'next/image'
+
 export function Projects() {
   const projects = [
     {
@@ -23,7 +24,7 @@ export function Projects() {
       image: '/Itinera.png',
     },
     {
-      title: 'This Cool, Amazing, Awesome-Sauce Site',
+      title: 'Portfolio Website',
       description:
         'My personal portfolio website, built to showcase my projects, experience, and skills. Designed and developed from scratch with a focus on clean design, accessibility, and performance.',
       tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel'],
@@ -36,71 +37,72 @@ export function Projects() {
     <section id="projects" className="py-16 border-t border-emerald-100">
       <h2 className="text-3xl font-bold mb-2">featured projects</h2>
       <div className="h-1 w-16 bg-emerald-500 mb-8"></div>
-      <p className="text-gray-600 mb-12 max-w-3xl">
+      <p className="text-gray-600 mb-12 max-w-3xl mx-auto text-center">
         {"Here are some of my projects."}
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
-          <div
+          <a
             key={index}
-            className="bg-emerald-500 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full"
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group bg-emerald-500 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full cursor-pointer border border-emerald-100 focus:outline-none focus:ring-2 focus:ring-black hover:outline hover:outline-2 hover:outline-black"
+            tabIndex={0}
+            aria-label={`View ${project.title} on GitHub`}
           >
-            <div className="h-48 overflow-hidden">
+            <div className="relative h-48 w-full overflow-hidden pointer-events-none">
               <Image
                 src={project.image}
                 alt={project.title}
-                width={400}
-                height={192}
-                className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-110"
+                width={600}
+                height={240}
+                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105 group-focus:scale-105"
               />
             </div>
             <div className="p-6 flex-1 flex flex-col">
               <h3 className="text-xl font-bold mb-2 text-white">
                 {project.title}
               </h3>
-              <p className="text-white mb-4 flex-1">
+              <p className="text-white mb-4 flex-1 text-base">
                 {project.description}
               </p>
-              <div className="mb-4">
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="bg-white/20 text-xs px-3 py-1 rounded-full text-white"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.tech.map((tech, techIndex) => (
+                  <span
+                    key={techIndex}
+                    className="bg-white/20 text-white text-xs px-3 py-1 rounded-full font-mono"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
-              <div className="flex space-x-4">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-white/80 transition-colors"
+              <div className="flex space-x-4 mt-auto">
+                <span
+                  className="text-white hover:text-black transition-colors cursor-pointer"
+                  tabIndex={-1}
+                  aria-label="GitHub"
+                  onClick={e => {
+                    e.stopPropagation();
+                    window.open(project.github, '_blank', 'noopener,noreferrer');
+                  }}
                 >
-                  <GithubIcon className="w-5 h-5" />
-                </a>
-                <a
-                  href="https://www.amaans.dev/#projects"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-white/80 transition-colors"
+                  <GithubIcon className="w-6 h-6" />
+                </span>
+                <span
+                  className="text-white hover:text-black transition-colors cursor-pointer"
+                  tabIndex={-1}
+                  aria-label="External Link"
+                  onClick={e => {
+                    e.stopPropagation();
+                    window.open(project.demo, '_blank', 'noopener,noreferrer');
+                  }}
                 >
-                  <HomeIcon className="w-5 h-5" />
-                </a>
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-white/80 transition-colors"
-                >
-                  <ExternalLinkIcon className="w-5 h-5" />
-                </a>
+                  <ExternalLinkIcon className="w-6 h-6" />
+                </span>
               </div>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </section>

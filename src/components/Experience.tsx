@@ -57,21 +57,23 @@ export function Experience() {
               {/* Content */}
               <div className="md:col-span-5">
                 <div className="bg-emerald-500 p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <h3 className="text-xl font-bold text-white">
-                      {experience.company}
-                    </h3>
-                    <span className="text-white/80">{experience.period}</span>
+                  <div className="rounded-lg">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                      <h3 className="text-xl font-bold text-white">
+                        {experience.company}
+                      </h3>
+                      <span className="text-white/80">{experience.period}</span>
+                    </div>
+                    <h4 className="text-lg font-medium text-white mb-4">
+                      {experience.position}
+                    </h4>
+                    {/* Bullets */}
+                    <ul className="list-disc pl-5 text-white mb-4 space-y-2">
+                      {experience.bullets.map((bullet, i) => (
+                        <li key={i}>{bullet}</li>
+                      ))}
+                    </ul>
                   </div>
-                  <h4 className="text-lg font-medium text-white mb-4">
-                    {experience.position}
-                  </h4>
-                  {/* Bullets */}
-                  <ul className="list-disc pl-5 text-white mb-4 space-y-2">
-                    {experience.bullets.map((bullet, i) => (
-                      <li key={i}>{bullet}</li>
-                    ))}
-                  </ul>
                 </div>
               </div>
             </div>
