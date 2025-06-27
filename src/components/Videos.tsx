@@ -18,23 +18,28 @@ export function Videos() {
       <h2 className="text-3xl font-bold mb-2">videos</h2>
       <div className="h-1 w-16 bg-emerald-500 mb-8"></div>
       <p className="text-gray-600 mb-12 max-w-3xl">
-        Check out some of my cool videos.
+        Some of my videos.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {videos.map((video, index) => (
-          <div
+          <a
             key={index}
-            className="bg-emerald-500 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full"
+            href={video.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group bg-emerald-500 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full cursor-pointer border border-emerald-100 focus:outline-none focus:ring-2 focus:ring-black hover:outline hover:outline-2 hover:outline-black"
+            tabIndex={0}
+            aria-label={`Watch ${video.title}`}
           >
-            <div className="relative h-48 overflow-hidden">
+            <div className="relative h-48 overflow-hidden pointer-events-none">
               <Image
                 src={video.thumbnail}
                 alt={video.title}
                 width={400}
                 height={192}
-                className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-110"
+                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110 group-focus:scale-110"
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 opacity-0 hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300">
                 <div className="bg-white rounded-full p-3">
                   <PlayIcon className="w-8 h-8 text-emerald-500" />
                 </div>
@@ -48,16 +53,8 @@ export function Videos() {
                 {video.title}
               </h3>
               <p className="text-white mb-4 flex-1">{video.description}</p>
-              <a
-                href={video.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-white/80 transition-colors font-medium"
-              >
-                Watch video
-              </a>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </section>
