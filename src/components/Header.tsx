@@ -43,11 +43,12 @@ export function Header() {
               </a>
             ))}
           </nav>
-          <div className="md:hidden">
+          <div className="md:hidden relative">
             <button
               className="text-gray-600 hover:text-gray-800"
               onClick={handleMenuToggle}
               aria-label="Open menu"
+              id="mobile-menu-button"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -64,41 +65,35 @@ export function Header() {
                 />
               </svg>
             </button>
+            {menuOpen && (
+              <div
+                className="absolute right-0 mt-2 w-48 bg-white rounded-xl border border-gray-200 shadow-lg z-50 animate-fade-in"
+                style={{ minWidth: '10rem' }}
+              >
+                <button
+                  className="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl p-1 rounded focus:outline-none"
+                  onClick={handleMenuClose}
+                  aria-label="Close menu"
+                >
+                  &times;
+                </button>
+                <nav className="flex flex-col space-y-4 py-6 px-6">
+                  {navLinks.map((link) => (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      onClick={handleMenuClose}
+                      className="text-base text-gray-800 hover:text-emerald-500 transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+            )}
           </div>
         </div>
       </div>
-      {/* Mobile Menu Dropdown (Right Side) */}
-      {menuOpen && (
-        <div
-          className="fixed inset-0 z-50"
-          onClick={handleMenuClose}
-        >
-          <div
-            className="absolute top-0 right-0 h-full w-64 bg-white/95 shadow-lg flex flex-col py-8 px-6 transition-transform duration-300"
-            onClick={e => e.stopPropagation()}
-          >
-            <button
-              className="absolute top-4 right-4 text-gray-600 hover:text-gray-800 text-3xl"
-              onClick={handleMenuClose}
-              aria-label="Close menu"
-            >
-              &times;
-            </button>
-            <nav className="flex flex-col space-y-8 text-2xl font-bold text-gray-800 mt-12">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={handleMenuClose}
-                  className="hover:text-emerald-500 transition-colors"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </nav>
-          </div>
-        </div>
-      )}
     </header>
   )
 } 
