@@ -59,7 +59,9 @@ export function Projects() {
               <h3 className="text-xl font-bold mb-2 text-white">
                 {project.title}
               </h3>
-              <p className="text-white mb-4 flex-1">{project.description}</p>
+              <p className="text-white mb-4 flex-1">
+                {project.description}
+              </p>
               <div className="mb-4">
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech, techIndex) => (
