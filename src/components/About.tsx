@@ -21,13 +21,13 @@ export function About() {
           </div>
           <div className="md:w-2/3">
             <p className="text-gray-700 text-lg mb-4">
-              {"Hello! I'm Amaan Sheikh, an ambitious Computer Science student with a minor in Statistics. I'm passionate about full-stack development, startups, and using code to make life smoother."}
+              {"Hello! I'm Amaan Sheikh, an ambitious Computer Science student with a minor in Statistics. I'm passionate about full-stack development, AI/ML, and using code to make life smoother."}
             </p>
             <p className="text-gray-700 text-lg mb-4">
               {"I'm also the founder of UB Forge, a student run dev collective helping driven students build real projects, explore startup opportunities, and connect with mentors."}
             </p>
             <p className="text-gray-700 text-lg">
-              {"Outside of class and coding, you'll find me playing volleyball, spending time with friends and family, or petting cats. I'm always trying to live a clean and active life."}
+              {"Outside of class and coding, you'll find me playing volleyball, spending time with friends and family, or watching traveling videos. Always trying to live a clean and active life."}
             </p>
           </div>
         </div>
