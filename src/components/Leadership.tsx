@@ -1,12 +1,15 @@
 'use client'
 import React from 'react'
 import { UsersIcon } from 'lucide-react'
+import Image from 'next/image'
+
 export function Leadership() {
   const leadershipRoles = [
     {
       organization: 'UB Forge',
       role: 'Founder|Executive Director',
       period: 'Mar 2025 – Present',
+      image: '/Forge.png',
       bullets: [
         'Launched a student-run developer collective from scratch, leading a 6-person core team and planning 5+ project pods for Fall 2025.',
         'Built partnerships and internal infrastructure to give students access to real-world product building and startup mentorship.',
@@ -16,6 +19,7 @@ export function Leadership() {
       organization: 'Theta Tau',
       role: 'Head of Professional Dev.',
       period: 'May 2024 – Jan 2025',
+      image: '/ThetaTau.png',
       bullets: [
         'Organized 4 company tours and 3 networking panels with speakers from Big Tech and startups, driving 100+ student interactions.',
         'Created a new speaker outreach system to streamline comms and secure higher-caliber guest speakers.',
@@ -25,6 +29,7 @@ export function Leadership() {
       organization: 'Theta Tau',
       role: 'Pledge Class President',
       period: 'Jan 2024 – Apr 2024',
+      image: '/ThetaTau.png',
       bullets: [
         'Led a 19-member pledge class through a 10-week leadership and engineering program, fostering collaboration and accountability.',
         'Raised $1,900 to fund and build an Arduino-powered catapult, managing coding, system integration, and final demo.',
@@ -42,9 +47,9 @@ export function Leadership() {
             key={index}
             className="bg-emerald-500 p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:outline hover:outline-2 hover:outline-black focus:outline-none focus:ring-2 focus:ring-black"
           >
-            <div className="mb-4">
-              <div className="w-10 h-10 text-white">
-                <UsersIcon className="w-10 h-10" />
+            <div className="mb-4 flex justify-center">
+              <div className="w-14 h-14 rounded-full bg-white border-2 border-emerald-500 shadow-md flex items-center justify-center overflow-hidden">
+                <Image src={role.image} alt={role.organization + ' logo'} width={56} height={56} className="w-14 h-14 object-cover" />
               </div>
             </div>
             <h3 className="text-xl font-bold mb-1 text-white">
