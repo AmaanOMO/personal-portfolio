@@ -21,7 +21,7 @@ export function Experience() {
       company: 'Visual Computing Lab',
       position: 'Undergraduate Researcher',
       period: 'Oct 2024 – Jan 2025',
-      image: '/schoolofCS.png',
+      image: '/SchoolofCS.png',
       description: '',
       tech: [],
       bullets: [
