@@ -1,12 +1,15 @@
 'use client'
 import React from 'react'
 import { BriefcaseIcon } from 'lucide-react'
+import Image from 'next/image'
+
 export function Experience() {
   const experiences = [
     {
       company: 'Outlier AI',
       position: 'Prompt Engineer',
       period: 'Nov 2024 – Mar 2025',
+      image: '/Outlier.png',
       description: '',
       tech: [],
       bullets: [
@@ -16,9 +19,10 @@ export function Experience() {
       ],
     },
     {
-      company: 'Visual Computing Lab, UB',
+      company: 'Visual Computing Lab',
       position: 'Undergraduate Researcher',
       period: 'Oct 2024 – Jan 2025',
+      image: '/schoolofCS.png',
       description: '',
       tech: [],
       bullets: [
@@ -39,19 +43,21 @@ export function Experience() {
               {/* Timeline connector */}
               <div className="hidden md:block md:col-span-3">
                 <div className="flex justify-end mr-8 relative">
-                  <div className="w-4 h-4 rounded-full bg-emerald-500 z-10"></div>
+                  <div className="w-14 h-14 rounded-full bg-white border-2 border-emerald-500 shadow-md flex items-center justify-center overflow-hidden z-10">
+                    <Image src={experience.image} alt={experience.company + ' logo'} width={56} height={56} className="w-14 h-14 object-cover" />
+                  </div>
                   {index !== experiences.length - 1 && (
-                    <div className="absolute top-4 bottom-0 right-[7px] w-0.5 bg-emerald-100 -z-10 h-full"></div>
+                    <div className="absolute top-14 bottom-0 right-[27px] w-0.5 bg-emerald-100 -z-10 h-full"></div>
                   )}
                 </div>
               </div>
               {/* Mobile timeline dot */}
               <div className="absolute left-0 top-0 md:hidden">
-                <div className="flex items-center justify-center w-8 h-8 rounded-full bg-white border border-emerald-500">
-                  <BriefcaseIcon className="w-4 h-4 text-emerald-500" />
+                <div className="flex items-center justify-center w-16 h-16 rounded-full bg-white border-2 border-emerald-500 shadow-md overflow-hidden">
+                  <Image src={experience.image} alt={experience.company + ' logo'} width={64} height={64} className="w-16 h-16 object-cover" />
                 </div>
                 {index !== experiences.length - 1 && (
-                  <div className="absolute top-8 bottom-0 left-4 w-0.5 bg-emerald-100 -z-10"></div>
+                  <div className="absolute top-16 bottom-0 left-8 w-0.5 bg-emerald-100 -z-10"></div>
                 )}
               </div>
               {/* Content */}

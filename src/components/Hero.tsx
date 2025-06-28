@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react'
 import { GithubIcon, LinkedinIcon, FileTextIcon } from 'lucide-react'
 
 const phrases = [
-  "I'm an aspiring software engineer",
-  "I play volleyball",
-  "I like cats",
+  "Aspiring Software Engineer",
+  "Into Full-Stack & AI/ML",
+  "I like Cats & Volleyball",
 ];
 
 export function Hero() {

@@ -6,9 +6,9 @@ import Image from 'next/image'
 export function Projects() {
   const projects = [
     {
-      title: 'Matchy AI',
+      title: 'Matchy AI - Ongoing',
       description:
-        'An AI-powered job matching platform that analyzes your resume and preferences to surface high-fit job listings, automating the application hunt and sending tailored alerts straight to your inbox. Still in the works.',
+        'An AI-powered job matching platform that analyzes your resume and preferences to surface high-fit job listings, automating the application hunt and sending tailored alerts straight to your inbox.',
       tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase', 'OpenAI API', 'PostHog', 'Vercel'],
       github: 'https://github.com/AmaanOMO/matchyai-landing',
       demo: 'https://github.com/AmaanOMO/matchyai-landing',
@@ -32,6 +32,15 @@ export function Projects() {
       demo: '#',
       image: '/Portfolio.png',
     },
+    {
+      title: 'Fully Automated Catapult',
+      description:
+        'Led a 19-person team to design and build an automated catapult. Raised $1,900 in funding, programmed using Arduino Uno + L298 motor drivers, and oversaw both technical and physical construction. Delivered a fully functional demo to alumni, blending craftsmanship with automation.',
+      tech: ['C++ Arduino Uno R3', 'L298N Motor Driver', 'DC Motors', 'IR Sensors', 'Breadboard', 'Woodworking'],
+      github: '',
+      demo: 'https://www.linkedin.com/posts/amaansheikh-swe_i-presented-our-teams-successful-completion-activity-7187211205374062593-yZbK?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEyFJBoBp4AQQzhj5droVXrRR2PNeFZmvQY',
+      image: '/catapult.png',
+    },
   ]
   return (
     <section id="projects" className="py-16 border-t border-emerald-100">
@@ -40,70 +49,95 @@ export function Projects() {
       <p className="text-gray-600 mb-12 max-w-3xl mx-auto text-center">
         {"Here are some of my projects."}
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project, index) => (
-          <a
-            key={index}
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group bg-emerald-500 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full cursor-pointer border border-emerald-100 focus:outline-none focus:ring-2 focus:ring-black hover:outline hover:outline-2 hover:outline-black"
-            tabIndex={0}
-            aria-label={`View ${project.title} on GitHub`}
-          >
-            <div className="relative h-48 w-full overflow-hidden pointer-events-none">
-              <Image
-                src={project.image}
-                alt={project.title}
-                width={600}
-                height={240}
-                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105 group-focus:scale-105"
-              />
-            </div>
-            <div className="p-6 flex-1 flex flex-col">
-              <h3 className="text-xl font-bold mb-2 text-white">
-                {project.title}
-              </h3>
-              <p className="text-white mb-4 flex-1 text-base">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tech.map((tech, techIndex) => (
-                  <span
-                    key={techIndex}
-                    className="bg-white/20 text-white text-xs px-3 py-1 rounded-full font-mono"
-                  >
-                    {tech}
-                  </span>
-                ))}
+      <div
+        className="overflow-x-auto scrollbar-thin scrollbar-thumb-white/30 scrollbar-track-transparent"
+        style={{ WebkitOverflowScrolling: 'touch' }}
+      >
+        <div
+          className="flex space-x-6 min-w-[340px] sm:min-w-0 px-2"
+          style={{ paddingBottom: '0.5rem' }}
+        >
+          {projects.map((project, index) => (
+            <a
+              key={index}
+              href={project.github || project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-emerald-500 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full cursor-pointer border border-emerald-100 focus:outline-none focus:ring-2 focus:ring-black hover:outline hover:outline-2 hover:outline-black min-w-[300px] max-w-xs sm:min-w-[340px] sm:max-w-sm flex-shrink-0"
+              tabIndex={0}
+              aria-label={`View ${project.title}`}
+            >
+              <div className="relative h-48 w-full overflow-hidden pointer-events-none">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={600}
+                  height={240}
+                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105 group-focus:scale-105"
+                />
               </div>
-              <div className="flex space-x-4 mt-auto">
-                <span
-                  className="text-white hover:text-black transition-colors cursor-pointer"
-                  tabIndex={-1}
-                  aria-label="GitHub"
-                  onClick={e => {
-                    e.stopPropagation();
-                    window.open(project.github, '_blank', 'noopener,noreferrer');
-                  }}
-                >
-                  <GithubIcon className="w-6 h-6" />
-                </span>
-                <span
-                  className="text-white hover:text-black transition-colors cursor-pointer"
-                  tabIndex={-1}
-                  aria-label="External Link"
-                  onClick={e => {
-                    e.stopPropagation();
-                    window.open(project.demo, '_blank', 'noopener,noreferrer');
-                  }}
-                >
-                  <ExternalLinkIcon className="w-6 h-6" />
-                </span>
+              <div className="p-6 flex-1 flex flex-col">
+                <h3 className="text-xl font-bold mb-2 text-white">
+                  {project.title}
+                </h3>
+                <p className="text-white mb-4 flex-1 text-base">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tech.map((tech, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className="bg-white/20 text-white text-xs px-3 py-1 rounded-full font-mono"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                {project.github && (
+                  <div className="flex space-x-4 mt-auto">
+                    <span
+                      className="text-white hover:text-black transition-colors cursor-pointer"
+                      tabIndex={-1}
+                      aria-label="GitHub"
+                      onClick={e => {
+                        e.stopPropagation();
+                        window.open(project.github, '_blank', 'noopener,noreferrer');
+                      }}
+                    >
+                      <GithubIcon className="w-6 h-6" />
+                    </span>
+                    <span
+                      className="text-white hover:text-black transition-colors cursor-pointer"
+                      tabIndex={-1}
+                      aria-label="External Link"
+                      onClick={e => {
+                        e.stopPropagation();
+                        window.open(project.demo, '_blank', 'noopener,noreferrer');
+                      }}
+                    >
+                      <ExternalLinkIcon className="w-6 h-6" />
+                    </span>
+                  </div>
+                )}
+                {!project.github && (
+                  <div className="flex space-x-4 mt-auto">
+                    <span
+                      className="text-white hover:text-black transition-colors cursor-pointer"
+                      tabIndex={-1}
+                      aria-label="External Link"
+                      onClick={e => {
+                        e.stopPropagation();
+                        window.open(project.demo, '_blank', 'noopener,noreferrer');
+                      }}
+                    >
+                      <ExternalLinkIcon className="w-6 h-6" />
+                    </span>
+                  </div>
+                )}
               </div>
-            </div>
-          </a>
-        ))}
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   )
