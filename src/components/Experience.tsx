@@ -1,6 +1,5 @@
 'use client'
 import React from 'react'
-import { BriefcaseIcon } from 'lucide-react'
 import Image from 'next/image'
 
 export function Experience() {
