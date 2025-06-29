@@ -12,6 +12,8 @@ export function Header() {
     { href: '#projects', label: 'projects' },
     { href: '#skills', label: 'skills' },
     { href: '#experience', label: 'experience' },
+    { href: '#leadership', label: 'leadership'},
+    { href: '#videos', label: 'videos'},
     { href: '#contact', label: 'contact' },
   ]
 
