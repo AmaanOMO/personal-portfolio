@@ -63,8 +63,9 @@ export function Hero() {
       </div>
       <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
         <a
-          href="#"
-          onClick={(e) => { e.preventDefault(); alert('A long bearded pirate wizard stole my resume. I promise to find him and get my resume back soon!'); }}
+          href="https://drive.google.com/file/d/15ZjOnG476SrvTUwLOuzpYovNLDNKWNiL/view?usp=share_link"
+          target="_blank"
+          rel="noopener noreferrer"
           className="bg-white border-2 border-emerald-500 text-black hover:bg-emerald-50 px-6 py-3 rounded-md flex items-center justify-center transition-colors"
         >
           <FileTextIcon className="w-5 h-5 mr-2 text-black" />
