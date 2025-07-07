@@ -6,7 +6,7 @@ import Image from 'next/image'
 export function Projects() {
   const projects = [
     {
-      title: 'Bluescore - Ongoing',
+      title: 'BlueScore - Ongoing',
       description:
         'A grade analytics platform for UB students that visualizes grade trends across courses, instructors, and departments. Powered by real FOIL-requested data (250k+ grades) to help students pick classes smarter.',
       tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase (PostgreSQL)', 'Recharts', 'Vercel'],
