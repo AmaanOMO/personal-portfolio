@@ -6,13 +6,13 @@ import Image from 'next/image'
 export function Projects() {
   const projects = [
     {
-      title: 'Matchy AI - Ongoing',
+      title: 'Bluescore - Ongoing',
       description:
-        'An AI-powered job matching platform that analyzes your resume and preferences to surface high-fit job listings, automating the application hunt and sending tailored alerts straight to your inbox.',
-      tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase', 'OpenAI API', 'PostHog', 'Vercel'],
-      github: 'https://github.com/AmaanOMO/matchyai-landing',
-      demo: 'https://github.com/AmaanOMO/matchyai-landing',
-      image: '/MatchyAI.png',
+        'A grade analytics platform for UB students that visualizes grade trends across courses, instructors, and departments. Powered by real FOIL-requested data (250k+ grades) to help students pick classes smarter.',
+      tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase (PostgreSQL)', 'Recharts', 'Vercel'],
+      github: 'https://github.com/AmaanOMO/bluescore',
+      demo: '',
+      image: '/Bluescore.png',
     },
     {
       title: 'Itinera',
@@ -22,6 +22,15 @@ export function Projects() {
       github: 'https://github.com/ChuTown/Itinera',
       demo: 'https://devpost.com/software/temp-jg764r?ref_content=user-portfolio&ref_feature=in_progress',
       image: '/Itinera.png',
+    },
+    {
+      title: 'Matchy AI - Ongoing',
+      description:
+        'An AI-powered job matching platform that analyzes your resume and preferences to surface high-fit job listings, automating the application hunt and sending tailored alerts straight to your inbox.',
+      tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase', 'OpenAI API', 'PostHog', 'Vercel'],
+      github: 'https://github.com/AmaanOMO/matchyai-landing',
+      demo: 'https://github.com/AmaanOMO/matchyai-landing',
+      image: '/MatchyAI.png',
     },
     {
       title: 'Portfolio Website',
@@ -93,7 +102,7 @@ export function Projects() {
                     </span>
                   ))}
                 </div>
-                {project.github && (
+                {project.github && project.demo && (
                   <div className="flex space-x-4 mt-auto">
                     <span
                       className="text-white hover:text-black transition-colors cursor-pointer"
@@ -119,7 +128,22 @@ export function Projects() {
                     </span>
                   </div>
                 )}
-                {!project.github && (
+                {project.github && !project.demo && (
+                  <div className="flex space-x-4 mt-auto">
+                    <span
+                      className="text-white hover:text-black transition-colors cursor-pointer"
+                      tabIndex={-1}
+                      aria-label="GitHub"
+                      onClick={e => {
+                        e.stopPropagation();
+                        window.open(project.github, '_blank', 'noopener,noreferrer');
+                      }}
+                    >
+                      <GithubIcon className="w-6 h-6" />
+                    </span>
+                  </div>
+                )}
+                {!project.github && project.demo && (
                   <div className="flex space-x-4 mt-auto">
                     <span
                       className="text-white hover:text-black transition-colors cursor-pointer"
