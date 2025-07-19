@@ -78,7 +78,7 @@ export function Hero() {
           href="https://github.com/AmaanOMO"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-md flex justify-center items-center gap-2 w-full max-w-xs transition-colors text-base"
+          className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-md flex justify-center items-center gap-2 w-[260px] transition-colors text-base"
         >
           <GithubIcon className="w-5 h-5" />
           GitHub
