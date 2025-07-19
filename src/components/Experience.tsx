@@ -6,6 +6,19 @@ import { motion } from 'framer-motion'
 export function Experience() {
   const experiences = [
     {
+      company: 'JET Worldwide Enterprises Inc.',
+      position: 'Software Engineer Intern',
+      period: 'Jun 2025 – Present',
+      image: '/CatchU.png', // Make sure to add this logo to your public folder
+      description: 'New York, United States',
+      tech: [],
+      bullets: [
+        'Joined as the first engineering intern at JET Worldwide Enterprises Inc, a health-tech startup backed by 15+ years of research. Working on CatchU.',
+        'Building tools to assess cognitive-motor health and reduce fall risk in older adults.',
+        'Collaborating with the founder, researchers, and developers to refine the website and product.'
+      ],
+    },
+    {
       company: 'Outlier AI',
       position: 'Prompt Engineer',
       period: 'Nov 2024 – Mar 2025',

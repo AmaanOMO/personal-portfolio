@@ -63,33 +63,36 @@ export function Hero() {
           <span className="text-black">{displayText}</span>
           {showCursor && <span className="text-black">_</span>}
         </div>
-        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center items-center">
+        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center items-center w-full max-w-xs mx-auto">
         <a
-          href="https://drive.google.com/file/d/15ZjOnG476SrvTUwLOuzpYovNLDNKWNiL/view?usp=share_link"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-white border-2 border-emerald-500 text-black hover:bg-emerald-50 px-6 py-3 rounded-md flex items-center justify-center transition-colors"
+          onClick={e => { e.preventDefault(); alert('A wise bearded cat stole my resume. I promise to find him and get my resume back soon!'); }}
+          href="#"
+          className="bg-white border-2 border-emerald-500 text-black hover:bg-emerald-50 px-6 py-3 rounded-md flex justify-center items-center gap-2 w-[260px] transition-colors text-base cursor-pointer"
         >
-          <FileTextIcon className="w-5 h-5 mr-2 text-black" />
-          Resume
+          <span className="flex items-center gap-2 w-full justify-center">
+            <FileTextIcon className="w-5 h-5 text-black" />
+            Resume
+          </span>
         </a>
         <a
           href="https://github.com/AmaanOMO"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-md flex items-center justify-center transition-colors"
+          className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-md flex justify-center items-center gap-2 w-full max-w-xs transition-colors text-base"
         >
-          <GithubIcon className="w-5 h-5 mr-2" />
+          <GithubIcon className="w-5 h-5" />
           GitHub
         </a>
         <a
           href="https://www.linkedin.com/in/amaansheikh-swe"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-white border-2 border-emerald-500 text-black hover:bg-emerald-50 px-6 py-3 rounded-md flex items-center justify-center transition-colors"
+          className="bg-white border-2 border-emerald-500 text-black hover:bg-emerald-50 px-6 py-3 rounded-md flex justify-center items-center gap-2 w-[260px] transition-colors text-base cursor-pointer"
         >
-          <LinkedinIcon className="w-5 h-5 mr-2 text-black" />
-          LinkedIn
+          <span className="flex items-center gap-2 w-full justify-center">
+            <LinkedinIcon className="w-5 h-5 text-black" />
+            LinkedIn
+          </span>
         </a>
       </div>
         </ScrollAnimation>
