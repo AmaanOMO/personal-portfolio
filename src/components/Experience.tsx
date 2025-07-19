@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 export function Experience() {
   const experiences = [
@@ -31,36 +32,96 @@ export function Experience() {
       ],
     },
   ]
+
+  // Animation variants
+  const timelineVariants = {
+    hidden: { scaleY: 0 },
+    visible: { 
+      scaleY: 1,
+      transition: { duration: 0.8, ease: "easeOut" as const }
+    }
+  }
+
+  const logoVariants = {
+    hidden: { scale: 0, opacity: 0 },
+    visible: { 
+      scale: 1, 
+      opacity: 1,
+      transition: { 
+        type: "spring" as const,
+        stiffness: 300,
+        damping: 15,
+        delay: 0.3
+      }
+    }
+  }
+
+  const cardVariants = {
+    hidden: { x: 100, opacity: 0 },
+    visible: { 
+      x: 0, 
+      opacity: 1,
+      transition: { 
+        type: "spring" as const,
+        stiffness: 200,
+        damping: 20,
+        delay: 0.3
+      }
+    }
+  }
+
   return (
     <section id="experience" className="py-16 border-t border-emerald-100">
-      <h2 className="text-3xl font-bold mb-2">experience</h2>
-      <div className="h-1 w-16 bg-emerald-500 mb-8"></div>
-      <div className="space-y-12">
-        {experiences.map((experience, index) => (
-          <div key={index} className="relative pl-10 md:pl-0">
-            <div className="md:grid md:grid-cols-8 md:gap-8">
-              {/* Timeline connector */}
-              <div className="hidden md:block md:col-span-3">
-                <div className="flex justify-end mr-8 relative">
-                  <div className="w-14 h-14 rounded-full bg-white border-2 border-emerald-500 shadow-md flex items-center justify-center overflow-hidden z-10">
-                    <Image src={experience.image} alt={experience.company + ' logo'} width={56} height={56} className="w-14 h-14 object-cover" />
-                  </div>
-                  {index !== experiences.length - 1 && (
-                    <div className="absolute top-14 bottom-0 right-[27px] w-0.5 bg-emerald-100 -z-10 h-full"></div>
-                  )}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6 }}
+      >
+        <h2 className="text-3xl font-bold mb-2">experience</h2>
+        <div className="h-1 w-16 bg-emerald-500 mb-8"></div>
+      </motion.div>
+      
+      <div className="relative max-w-4xl mx-auto">
+        {/* Timeline line */}
+        <motion.div
+          className="absolute left-8 top-0 bottom-0 w-0.5 bg-emerald-500"
+          variants={timelineVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        />
+        
+        <div className="space-y-12">
+          {experiences.map((experience, index) => (
+            <motion.div
+              key={index}
+              className="relative flex items-start"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+            >
+              {/* Logo */}
+              <motion.div
+                className="absolute left-0 transform -translate-x-1/2 z-10"
+                variants={logoVariants}
+              >
+                <div className="w-16 h-16 rounded-full bg-white border-2 border-emerald-500 shadow-md flex items-center justify-center overflow-hidden">
+                  <Image 
+                    src={experience.image} 
+                    alt={experience.company + ' logo'} 
+                    width={64} 
+                    height={64} 
+                    className="w-16 h-16 object-cover" 
+                  />
                 </div>
-              </div>
-              {/* Mobile timeline dot */}
-              <div className="absolute left-0 top-0 md:hidden">
-                <div className="flex items-center justify-center w-16 h-16 rounded-full bg-white border-2 border-emerald-500 shadow-md overflow-hidden">
-                  <Image src={experience.image} alt={experience.company + ' logo'} width={64} height={64} className="w-16 h-16 object-cover" />
-                </div>
-                {index !== experiences.length - 1 && (
-                  <div className="absolute top-16 bottom-0 left-8 w-0.5 bg-emerald-100 -z-10"></div>
-                )}
-              </div>
-              {/* Content */}
-              <div className="md:col-span-5">
+              </motion.div>
+
+              {/* Content Card */}
+              <motion.div
+                className="ml-20 flex-1"
+                variants={cardVariants}
+              >
                 <div className="bg-emerald-500 p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
                   <div className="rounded-lg">
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
@@ -80,10 +141,10 @@ export function Experience() {
                     </ul>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        ))}
+              </motion.div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   )

@@ -2,6 +2,7 @@
 import React from 'react'
 import { PlayIcon } from 'lucide-react'
 import Image from 'next/image'
+import { ScrollAnimation } from './ScrollAnimation'
 export function Videos() {
   const videos = [
     {
@@ -15,16 +16,18 @@ export function Videos() {
   ]
   return (
     <section id="videos" className="py-16 border-t border-emerald-100">
-      <h2 className="text-3xl font-bold mb-2">videos</h2>
-      <div className="h-1 w-16 bg-emerald-500 mb-8"></div>
-      <p className="text-gray-600 mb-12 max-w-3xl">
-        Some of my videos.
-      </p>
+      <ScrollAnimation animation="fadeIn">
+        <h2 className="text-3xl font-bold mb-2">videos</h2>
+        <div className="h-1 w-16 bg-emerald-500 mb-8"></div>
+        <p className="text-gray-600 mb-12 max-w-3xl">
+          Some of my videos.
+        </p>
+      </ScrollAnimation>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {videos.map((video, index) => (
-          <a
-            key={index}
-            href={video.link}
+          <ScrollAnimation key={index} animation="fadeUp" delay={index * 0.1}>
+            <a
+              href={video.link}
             target="_blank"
             rel="noopener noreferrer"
             className="group bg-emerald-500 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full cursor-pointer border border-emerald-100 focus:outline-none focus:ring-2 focus:ring-black hover:outline hover:outline-2 hover:outline-black"
@@ -55,6 +58,7 @@ export function Videos() {
               <p className="text-white mb-4 flex-1">{video.description}</p>
             </div>
           </a>
+        </ScrollAnimation>
         ))}
       </div>
     </section>

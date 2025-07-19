@@ -1,14 +1,18 @@
 'use client'
 import React from 'react'
 import { MailIcon, SendIcon } from 'lucide-react'
+import { ScrollAnimation } from './ScrollAnimation'
 
 export function Contact() {
   return (
     <section id="contact" className="py-16 border-t border-emerald-100">
-      <h2 className="text-3xl font-bold mb-2">contact me</h2>
-      <div className="h-1 w-16 bg-emerald-500 mb-8"></div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="bg-emerald-500 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+      <ScrollAnimation animation="fadeIn">
+        <h2 className="text-3xl font-bold mb-2">contact me</h2>
+        <div className="h-1 w-16 bg-emerald-500 mb-8"></div>
+      </ScrollAnimation>
+      <ScrollAnimation animation="fadeUp" delay={0.1}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-emerald-500 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
           <div className="flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-6">
             <MailIcon className="w-8 h-8 text-white" />
           </div>
@@ -73,6 +77,7 @@ export function Contact() {
           </form>
         </div>
       </div>
+      </ScrollAnimation>
     </section>
   )
 } 

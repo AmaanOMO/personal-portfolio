@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import { GithubIcon, LinkedinIcon, FileTextIcon } from 'lucide-react'
+import { ScrollAnimation } from './ScrollAnimation'
 
 const phrases = [
   "Aspiring Software Engineer",
@@ -53,15 +54,16 @@ export function Hero() {
 
   return (
     <section className="py-20 md:py-32 flex flex-col items-center justify-center text-center">
-      <div className="cat-emoji text-5xl mb-6">🐈‍⬛🐈</div>
-      <h1 className="text-4xl md:text-6xl font-bold mb-6">
-        {"Hi, I'm "}<span className="text-emerald-500">Amaan Sheikh</span>
-      </h1>
-      <div className="text-xl md:text-2xl mb-8 font-light min-h-[2rem]">
-        <span className="text-black">{displayText}</span>
-        {showCursor && <span className="text-black">_</span>}
-      </div>
-      <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+      <ScrollAnimation animation="fadeUp">
+        <div className="cat-emoji text-5xl mb-6">🐈‍⬛🐈</div>
+        <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          {"Hi, I'm "}<span className="text-emerald-500">Amaan Sheikh</span>
+        </h1>
+        <div className="text-xl md:text-2xl mb-8 font-light min-h-[2rem]">
+          <span className="text-black">{displayText}</span>
+          {showCursor && <span className="text-black">_</span>}
+        </div>
+        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center items-center">
         <a
           href="https://drive.google.com/file/d/15ZjOnG476SrvTUwLOuzpYovNLDNKWNiL/view?usp=share_link"
           target="_blank"
@@ -90,6 +92,7 @@ export function Hero() {
           LinkedIn
         </a>
       </div>
+        </ScrollAnimation>
     </section>
   )
 } 
