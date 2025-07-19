@@ -45,7 +45,7 @@ export function Projects() {
     {
       title: 'Fully Automated Catapult',
       description:
-        'Led a 19-person team to design and build an automated catapult. Raised $1,900 in funding, programmed using Arduino Uno + L298 motor drivers, and oversaw both technical and physical construction. Delivered a fully functional demo to alumni, blending craftsmanship with automation.',
+        'Led a 19-person team to design and build an Arduino-powered catapult. Raised $1,900, programmed with Arduino Uno + L298 motor drivers, and oversaw both technical and physical construction. Delivered a working demo to alumni.',
       tech: ['C++ Arduino Uno R3', 'L298N Motor Driver', 'DC Motors', 'IR Sensors', 'Breadboard', 'Woodworking'],
       github: '',
       demo: 'https://www.linkedin.com/posts/amaansheikh-swe_i-presented-our-teams-successful-completion-activity-7187211205374062593-yZbK?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEyFJBoBp4AQQzhj5droVXrRR2PNeFZmvQY',
@@ -62,7 +62,7 @@ export function Projects() {
         </p>
       </ScrollAnimation>
       <div
-        className="overflow-x-auto scrollbar-thin scrollbar-thumb-white/30 scrollbar-track-transparent"
+        className="overflow-x-auto scrollbar-thin scrollbar-thumb-white/30 scrollbar-track-transparent mb-12 mt-5"
         style={{ WebkitOverflowScrolling: 'touch' }}
       >
         <ScrollAnimation animation="fadeUp">
