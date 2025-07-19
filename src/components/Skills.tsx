@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import { CheckCircleIcon } from 'lucide-react'
+import { ScrollAnimation } from './ScrollAnimation'
 
 export function Skills() {
   const skillCategories = [
@@ -52,14 +53,16 @@ export function Skills() {
 
   return (
     <section id="skills" className="py-16 border-t border-emerald-100">
-      <h2 className="text-3xl font-bold mb-2">skills</h2>
-      <div className="h-1 w-16 bg-emerald-500 mb-8"></div>
+      <ScrollAnimation animation="fadeIn">
+        <h2 className="text-3xl font-bold mb-2">skills</h2>
+        <div className="h-1 w-16 bg-emerald-500 mb-8"></div>
+      </ScrollAnimation>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {skillCategories.map((category, index) => (
-          <div
-            key={index}
-            className="bg-emerald-500 p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:outline hover:outline-2 hover:outline-black focus:outline-none focus:ring-2 focus:ring-black"
-          >
+          <ScrollAnimation key={index} animation="fadeUp" delay={index * 0.1}>
+            <div
+              className="bg-emerald-500 p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:outline hover:outline-2 hover:outline-black focus:outline-none focus:ring-2 focus:ring-black"
+            >
             <h3 className="text-xl font-semibold mb-4 text-white">
               {category.title}
             </h3>
@@ -72,6 +75,7 @@ export function Skills() {
               ))}
             </div>
           </div>
+        </ScrollAnimation>
         ))}
       </div>
     </section>

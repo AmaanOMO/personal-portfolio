@@ -2,6 +2,7 @@
 import React from 'react'
 import { GithubIcon, ExternalLinkIcon } from 'lucide-react'
 import Image from 'next/image'
+import { ScrollAnimation } from './ScrollAnimation'
 
 export function Projects() {
   const projects = [
@@ -53,20 +54,23 @@ export function Projects() {
   ]
   return (
     <section id="projects" className="py-16 border-t border-emerald-100">
-      <h2 className="text-3xl font-bold mb-2">featured projects</h2>
-      <div className="h-1 w-16 bg-emerald-500 mb-8"></div>
-      <p className="text-gray-600 mb-12 max-w-3xl mx-auto text-center">
-        {"Here are some of my projects."}
-      </p>
+      <ScrollAnimation animation="fadeIn">
+        <h2 className="text-3xl font-bold mb-2">featured projects</h2>
+        <div className="h-1 w-16 bg-emerald-500 mb-8"></div>
+        <p className="text-gray-600 mb-12 max-w-3xl mx-auto text-center">
+          {"Here are some of my projects."}
+        </p>
+      </ScrollAnimation>
       <div
         className="overflow-x-auto scrollbar-thin scrollbar-thumb-white/30 scrollbar-track-transparent"
         style={{ WebkitOverflowScrolling: 'touch' }}
       >
-        <div
-          className="flex space-x-6 min-w-[340px] sm:min-w-0 px-2"
-          style={{ paddingBottom: '0.5rem' }}
-        >
-          {projects.map((project, index) => (
+        <ScrollAnimation animation="fadeUp">
+          <div
+            className="flex space-x-6 min-w-[340px] sm:min-w-0 px-2"
+            style={{ paddingBottom: '0.5rem' }}
+          >
+            {projects.map((project, index) => (
             <a
               key={index}
               href={project.github || project.demo}
@@ -160,9 +164,10 @@ export function Projects() {
                 )}
               </div>
             </a>
-          ))}
+                      ))}
+          </div>
+        </ScrollAnimation>
         </div>
-      </div>
-    </section>
+      </section>
   )
 } 
