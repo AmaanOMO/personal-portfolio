@@ -65,8 +65,9 @@ export function Hero() {
         </div>
         <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center items-center w-full max-w-xs mx-auto">
         <a
-          onClick={e => { e.preventDefault(); alert('A wise bearded cat stole my resume. I promise to find him and get my resume back soon!'); }}
-          href="#"
+          href="https://drive.google.com/file/d/1fjTMOdXyHj48VxmpPs5U0iTscXv6fD9p/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
           className="bg-white border-2 border-emerald-500 text-black hover:bg-emerald-50 px-6 py-3 rounded-md flex justify-center items-center gap-2 w-[260px] transition-colors text-base cursor-pointer"
         >
           <span className="flex items-center gap-2 w-full justify-center">
