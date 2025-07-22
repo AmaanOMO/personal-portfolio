@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import { GithubIcon, LinkedinIcon, FileTextIcon } from 'lucide-react'
+import { GithubIcon, LinkedinIcon, FileTextIcon, X } from 'lucide-react'
 import { ScrollAnimation } from './ScrollAnimation'
 
 const phrases = [
@@ -14,6 +14,7 @@ export function Hero() {
   const [displayText, setDisplayText] = useState('')
   const [isTyping, setIsTyping] = useState(true)
   const [showCursor, setShowCursor] = useState(true)
+  const [showResumeModal, setShowResumeModal] = useState(false)
 
   // Typing and erasing animation
   useEffect(() => {
@@ -53,7 +54,8 @@ export function Hero() {
   }, [])
 
   return (
-    <section className="py-20 md:py-32 flex flex-col items-center justify-center text-center">
+    <>
+      <section className="py-20 md:py-32 flex flex-col items-center justify-center text-center">
       <ScrollAnimation animation="fadeUp">
         <div className="cat-emoji text-5xl mb-6">🐈‍⬛🐈</div>
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -64,17 +66,15 @@ export function Hero() {
           {showCursor && <span className="text-black">_</span>}
         </div>
         <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center items-center w-full max-w-xs mx-auto">
-        <a
-          href="https://drive.google.com/file/d/1fjTMOdXyHj48VxmpPs5U0iTscXv6fD9p/view?usp=sharing"
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          onClick={() => setShowResumeModal(true)}
           className="bg-white border-2 border-emerald-500 text-black hover:bg-emerald-50 px-6 py-3 rounded-md flex justify-center items-center gap-2 w-[260px] transition-colors text-base cursor-pointer"
         >
           <span className="flex items-center gap-2 w-full justify-center">
             <FileTextIcon className="w-5 h-5 text-black" />
             Resume
           </span>
-        </a>
+        </button>
         <a
           href="https://github.com/AmaanOMO"
           target="_blank"
@@ -97,6 +97,26 @@ export function Hero() {
         </a>
       </div>
         </ScrollAnimation>
-    </section>
+      </section>
+
+      {/* Resume Modal */}
+      {showResumeModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg p-6 max-w-md w-full mx-4 relative">
+            <button
+              onClick={() => setShowResumeModal(false)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            <div className="text-center">
+              <p className="text-gray-700">
+                A wise bearded cat stole my resume. I promise to find him and get it back soon!
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   )
 } 
