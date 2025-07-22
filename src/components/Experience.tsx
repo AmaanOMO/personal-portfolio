@@ -9,7 +9,7 @@ export function Experience() {
       company: 'JET Worldwide Enterprises Inc.',
       position: 'Software Engineer Intern',
       period: 'Jun 2025 – Present',
-      image: '/CatchU.png', // Make sure to add this logo to your public folder
+      image: '/myImages/CatchU.png', // Make sure to add this logo to your public folder
       description: 'New York, United States',
       tech: [],
       bullets: [
@@ -22,7 +22,7 @@ export function Experience() {
       company: 'Outlier AI',
       position: 'Prompt Engineer',
       period: 'Nov 2024 – Mar 2025',
-      image: '/Outlier.png',
+      image: '/myImages/Outlier.png',
       description: '',
       tech: [],
       bullets: [
@@ -35,7 +35,7 @@ export function Experience() {
       company: 'Visual Computing Lab',
       position: 'Undergraduate Researcher',
       period: 'Oct 2024 – Jan 2025',
-      image: '/SchoolofCS.png',
+      image: '/myImages/SchoolofCS.png',
       description: '',
       tech: [],
       bullets: [

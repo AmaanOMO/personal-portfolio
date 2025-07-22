@@ -9,7 +9,7 @@ export function Videos() {
       title: 'Spurhacks 2025 Edit',
       description:
         '',
-      thumbnail: '/youtube.png',
+      thumbnail: '/myImages/youtube.png',
       duration: '',
       link: 'https://youtu.be/VWumBIzF4v8',
     },

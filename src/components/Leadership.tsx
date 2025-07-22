@@ -9,7 +9,7 @@ export function Leadership() {
       organization: 'UB Forge',
       role: 'Founder|Executive Director',
       period: 'Mar 2025 – Present',
-      image: '/Forge.png',
+      image: '/myImages/Forge.png',
       bullets: [
         'Launched a student-run developer collective from scratch, leading a 6-person core team and planning 5+ project pods for Fall 2025.',
         'Built partnerships and internal infrastructure to give students access to real-world product building and startup mentorship.',
@@ -19,7 +19,7 @@ export function Leadership() {
       organization: 'Theta Tau',
       role: 'Head of Professional Dev.',
       period: 'May 2024 – Jan 2025',
-      image: '/ThetaTau.png',
+      image: '/myImages/ThetaTau.png',
       bullets: [
         'Organized 4 company tours and 3 networking panels with speakers from Big Tech and startups, driving 100+ student interactions.',
         'Created a new speaker outreach system to streamline comms and secure higher-caliber guest speakers.',
@@ -29,7 +29,7 @@ export function Leadership() {
       organization: 'Theta Tau',
       role: 'Pledge Class President',
       period: 'Jan 2024 – Apr 2024',
-      image: '/ThetaTau.png',
+      image: '/myImages/ThetaTau.png',
       bullets: [
         'Led a 19-member pledge class through a 10-week leadership and engineering program, fostering collaboration and accountability.',
         'Raised $1,900 to fund and build an Arduino-powered catapult, managing coding, system integration, and final demo.',
