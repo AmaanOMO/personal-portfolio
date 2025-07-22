@@ -13,7 +13,7 @@ export function Projects() {
       tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase (PostgreSQL)', 'Recharts', 'Vercel'],
       github: 'https://github.com/AmaanOMO/bluescore',
       demo: '',
-      image: '/Bluescore.png',
+      image: '/myImages/Bluescore.png',
     },
     {
       title: 'Itinera',
@@ -22,7 +22,7 @@ export function Projects() {
       tech: ['Next.js', 'React', 'Tailwind CSS', 'Google Maps API', 'OpenAI API'],
       github: 'https://github.com/ChuTown/Itinera',
       demo: 'https://devpost.com/software/temp-jg764r?ref_content=user-portfolio&ref_feature=in_progress',
-      image: '/Itinera.png',
+      image: '/myImages/Itinera.png',
     },
     {
       title: 'Matchy AI - Ongoing',
@@ -31,7 +31,7 @@ export function Projects() {
       tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase', 'OpenAI API', 'PostHog', 'Vercel'],
       github: 'https://github.com/AmaanOMO/matchyai-landing',
       demo: 'https://github.com/AmaanOMO/matchyai-landing',
-      image: '/MatchyAI.png',
+      image: '/myImages/MatchyAI.png',
     },
     {
       title: 'Portfolio Website',
@@ -40,7 +40,7 @@ export function Projects() {
       tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel'],
       github: 'https://github.com/AmaanOMO/personal-portfolio',
       demo: '#',
-      image: '/Portfolio.png',
+      image: '/myImages/Portfolio.png',
     },
     {
       title: 'Fully Automated Catapult',
@@ -49,7 +49,7 @@ export function Projects() {
       tech: ['C++ Arduino Uno R3', 'L298N Motor Driver', 'DC Motors', 'IR Sensors', 'Breadboard', 'Woodworking'],
       github: '',
       demo: 'https://www.linkedin.com/posts/amaansheikh-swe_i-presented-our-teams-successful-completion-activity-7187211205374062593-yZbK?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEyFJBoBp4AQQzhj5droVXrRR2PNeFZmvQY',
-      image: '/catapult.png',
+      image: '/myImages/catapult.png',
     },
   ]
   return (
